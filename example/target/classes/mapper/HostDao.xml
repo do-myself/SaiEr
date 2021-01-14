@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.HostDao">
+
+    <select id="queryAllHost1" resultType="host">
+        SELECT * FROM tb_host
+    </select>
+
+    <insert id="addHost" parameterType="host">
+        insert into tb_host (`name`,ip,mac,linkSwitch,linkPort)
+        values (#{name},#{ip},#{mac},#{linkSwitch},#{linkPort})
+    </insert>
+
+    <delete id="deleteHost">
+        delete from tb_host
+        where id=#{id}
+    </delete>
+
+    <select id="queryHostById" resultType="host">
+        select * from tb_host
+        where id=#{id}
+    </select>
+
+    <update id="modifyHost" parameterType="host">
+        update tb_host
+        set `name`=#{name},ip=#{ip},mac=#{mac},linkSwitch=#{linkSwitch},linkPort=#{linkPort}
+        where id=#{id}
+    </update>
+
+<!--    <sql id="sortKey">-->
+<!--        SET @i=0-->
+<!--        UPDATE `tb_host` SET `id`=(@i:=@i+1)-->
+<!--        ALTER TABLE `tb_host` AUTO_INCREMENT=0-->
+<!--    </sql>-->
+
+</mapper>

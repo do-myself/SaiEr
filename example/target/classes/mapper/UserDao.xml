@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.UserDao">
+
+    <select id="queryAllUser" resultType="user">
+        select * from tb_user
+    </select>
+
+    <select id="queryUserByCode" resultType="user">
+        select * from tb_user
+        where userCode=#{userCode}
+    </select>
+
+    <update id="updateUser" parameterType="user">
+        update tb_user
+        set userCode=#{userCode},password=#{password},userName=#{userName},phoneNum=#{phoneNum},age=#{age},sex=#{sex}
+        where id=#{id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from tb_user
+        where id=#{id}
+    </delete>
+
+    <insert id="addUser" parameterType="user">
+        insert into tb_user(userCode,password,userName,phoneNum,age,sex)
+        values (#{userCode},#{password},#{userName},#{phoneNum},#{age},#{sex})
+    </insert>
+</mapper>

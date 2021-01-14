@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.AttackInfoDao">
+
+    <select id="queryAll" resultType="AttackInfo">
+        SELECT * FROM tb_attack
+    </select>
+
+    <insert id="addAttackInfo" parameterType="AttackInfo">
+        insert into tb_attack (switchId,inPort,srcMac,dstMac,srcIp,dstIp,attackTime)
+        values (#{switchId},#{inPort},#{srcMac},#{dstMac},#{srcIp},#{dstIp},#{attackTime})
+    </insert>
+
+    <delete id="deleteAttackInfo">
+        delete from tb_attack
+        where id=#{id}
+    </delete>
+
+
+</mapper>

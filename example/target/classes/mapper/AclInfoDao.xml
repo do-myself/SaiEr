@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.AclInfoDao">
+
+    <!-- 查询访问控制列表信息 -->
+    <select id="queryacl" resultType="com.demo.entity.AclInfo">
+       SELECT * FROM tb_acl
+    </select>
+    
+     <!-- 添加acl防御策略 s -->
+    <insert id="acladd" parameterType="com.demo.entity.AclInfo">
+       INSERT INTO tb_acl
+       (id,ipsrc,ipdst,action) VALUES
+       (#{id},#{ipsrc},#{ipdst},#{action})
+    </insert>
+     
+     
+     <!-- 删除adcl防御策略s -->
+     <delete id="acldel" parameterType="int">
+       DELETE FROM tb_acl WHERE id=#{id}
+     </delete>
+    
+</mapper>

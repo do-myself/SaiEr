@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+	</settings>
+	
+	<typeAliases>
+		<package name="com.demo.entity"/>
+	</typeAliases>
+	
+<!--	<plugins>-->
+<!--		<plugin interceptor="com.github.pagehelper.PageInterceptor">-->
+<!--			&lt;!&ndash; 分页参数合理化   ，，默认false禁用&ndash;&gt;-->
+<!--			&lt;!&ndash; 启用合理化是，如果pageNum<1会查询第一页，如果pageNum>pages &ndash;&gt;-->
+<!--			&lt;!&ndash; 禁用合理化是，如果pageNum<1或pageNum>pages 会返回空数据 &ndash;&gt;-->
+<!--           <property name="reasonable" value="true"/>-->
+<!--		</plugin>-->
+<!--	</plugins>-->
+
+</configuration>

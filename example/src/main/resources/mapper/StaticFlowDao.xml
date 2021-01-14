@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.StaticFlowDao">
+    <!-- 添加流表信息 -->
+    <insert id="insertflow" parameterType="com.demo.entity.StaticFlow">
+       INSERT INTO tb_forward 
+       (switchid,name,priority,inport,outport) 
+       VALUES (#{switchid},#{name},#{priority},#{inport},#{outport})
+    </insert>
+</mapper>

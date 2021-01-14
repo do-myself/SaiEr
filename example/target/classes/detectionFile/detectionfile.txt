@@ -1,0 +1,4 @@
+Attack host ip: 10.0.0.1
+Attack host mac address: 00.00.00.00.00.00.01
+The switch to which the attacking host belongs: switch-01
+

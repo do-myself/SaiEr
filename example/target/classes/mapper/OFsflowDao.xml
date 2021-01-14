@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.OFsflowDao"> 
+    <!-- 查询所有的交换机信息 -->
+    <select id="getFlow" resultType="com.demo.entity.OFsflow">
+       SELECT * FROM tb_staticflow
+    </select>
+
+    <insert id="addFlow" parameterType="OFsflow">
+        insert into tb_staticflow (priority,srcMac,dstMac,srcIp,dstIp,inPort,outPort,switchID,`action`)
+         values (#{priority},#{srcMac},#{dstMac},#{srcIp},#{dstIp},#{inPort},#{outPort},#{switchID},#{action})
+    </insert>
+
+    <delete id="deleteFlowById">
+        delete from tb_staticflow
+        where id=#{id}
+    </delete>
+</mapper>
